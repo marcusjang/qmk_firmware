@@ -1,0 +1,3 @@
+#define RGB_DI_PIN D0
+#define RGBLED_NUM 3
+//#define RGBLIGHT_CUSTOM_LED_INIT
