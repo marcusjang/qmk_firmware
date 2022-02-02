@@ -1,21 +1,17 @@
 #define LAYOUT_wrapper(...) LAYOUT_ortho_4x12(__VA_ARGS__)
 
 #ifndef AUDIO_ENABLE
-
 #undef AU_TOG
 #undef MU_TOG
 #undef MU_MOD
 #define AU_TOG XXXXXXX
 #define MU_TOG XXXXXXX
 #define MU_MOD XXXXXXX
-
 #endif
 
 #ifdef NO_NKRO_SUPPORT
-
 #undef TOG_NKR
 #define TOG_NKR XXXXXXX
-
 #endif
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -37,7 +33,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_LCTL, KC_LGUI, KC_LALT, FN1,     LOWER,   NAV_SPC, NAV_SPC, RAISE,   FN2_HAN, KC_RALT, KC_RCTL, HAN_MOM  \
     ),
     /* Lower layer
-     * ┌───┬───┬───┬──TAB──┬───┬───┬───┬APP┬───┬───┬───┐
+     * ┌───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┐
      * │ ` │F1 │F2 │F3 │F4 │F5 │F6 │F7 │F8 │F9 │F10│   │
      * ├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤
      * │   │ 1 │ 2 │ 3 │ 4 │ 5 │ 6 │ 7 │ 8 │ 9 │ 0 │   │
@@ -55,7 +51,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
     /* Raised layer
      * ┌───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┐
-     * │ ~ │F11│F12│F13│F14│F15│F16│F17│F18│F19│F20│   │
+     * │ ~ │F11│F12│F13│F14│F15│   │   │Psc│Slk│Pau│   │
      * ├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤
      * │   │ ! │ @ │ # │ $ │ % │ ^ │ & │ * │ ( │ ) │   │
      * ├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤
@@ -123,13 +119,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
     /* Function layer
      * ┌───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┐
-     * │   │QAp│QTb│   │Rfr│   │   │   │   │   │Psc│Del│
+     * │   │QAp│QTb│   │Rfr│   │   │KP7│KP8│KP9│Psc│   │
      * ├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤
-     * │   │PTb│NTb│   │   │   │   │   │Mu←│Ply│Mu→│   │
+     * │   │PTb│NTb│PAp│NAp│Rdo│Udo│KP4│KP5│KP6│   │   │
      * ├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤
-     * │   │App│Hnj│Han│Cap│   │   │   │   │   │   │   │
+     * │   │App│Hnj│Han│Cap│   │   │KP1│KP2│KP3│Clr│   │
      * ├───┼───┼───╆━━━╅───┼───┼───┼───┼───┼───┼───┼───┤
-     * │   │   │   ┃Fn1┃   │   │   │   │   │   │   │   │
+     * │   │   │   ┃Fn1┃   │   │   │   │KP0│Nlc│   │   │
      * └───┴───┴───┺━━━┹───┴───┴───┴───┴───┴───┴───┴───┘
      */
     [_FN1] = LAYOUT_wrapper( \
@@ -140,9 +136,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
     /* Second Function layer
      * ┌───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┐
-     * │   │MWU│Ms2│MsU│Ms1│   │   │   │   │   │   │Del│
+     * │   │MWU│Ms2│MsU│Ms1│   │   │QAp│QTb│   │Rfs│Del│
      * ├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤
-     * │   │MWD│MsL│MsD│MsR│   │   │   │   │Rdo│Udo│   │ 
+     * │   │MWD│MsL│MsD│MsR│   │   │PTb│NTb│   │   │   │ 
      * ├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤
      * │   │Ms5│MWL│MWR│MS3│   │   │   │Cut│Cop│Pst│   │
      * ├───┼───┼───┼───┼───┼───┼───┼───╆━━━╅───┼───┼───┤
@@ -157,11 +153,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
     /* Adjust layer
      * ┌───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┐
-     * │   │M1P│M2P│   │   │   │   │   │   │   │   │   │
+     * │   │GME│DJM│Hu↑│Sa↑│Vr↑│Sp↑│Sp↓│LED│MAC│   │   │
      * ├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤
-     * │   │M1R│M2R│MRS│   │   │   │   │   │   │Mak│   │
+     * │   │RTg│RMd│Hu↓│Sa↓│Vr↓│Mu←│Ply│Mu→│WIN│Mak│   │
      * ├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤
-     * │   │AuT│MuT│MuM│Sc↓│Sc↑│Mut│Vl↓│Vl↑│   │Rst│   │
+     * │   │AuT│MuT│MuM│Sc↓│Sc↑│Mut│Vl↓│Vl↑│NKR│Rst│   │
      * ├───┼───┼───┼───╆━━━╅───┼───╆━━━╅───┼───┼───┼───┤
      * │   │   │   │   ┃Lwr┃   │   ┃Ris┃   │   │   │   │
      * └───┴───┴───┴───┺━━━┹───┴───┺━━━┹───┴───┴───┴───┘
@@ -176,7 +172,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_MUSIC] = LAYOUT_wrapper( \
         XXXXXXX, ___________________NOOP____________________, ___________________NOOP____________________, XXXXXXX,  \
         XXXXXXX, ___________________NOOP____________________, ___________________NOOP____________________, XXXXXXX, \
-        XXXXXXX, ___________________NOOP____________________, ___________________NOOP____________________,   XXXXXXX, \
+        XXXXXXX, ___________________NOOP____________________, ___________________NOOP____________________, XXXXXXX, \
         MUS_OFF, MU_MOD,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, ___________________NOOP____________________, XXXXXXX  \
     )
 #endif

@@ -1,4 +1,4 @@
-#include "marcus.h"
+#include "marcusjang.h"
 
 void set_keylog(uint16_t keycode, keyrecord_t *record);
 
@@ -103,19 +103,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
         case MAKE:
             if (record->event.pressed) {
-                SEND_STRING("make " QMK_KEYBOARD ":" QMK_KEYMAP
-#if defined(__arm__)
-                    ":dfu-util"
-#elif (defined(BOOTLOADER_DFU) || defined(BOOTLOADER_LUFA_DFU) || defined(BOOTLOADER_QMK_DFU))
-                    ":dfu"
-#elif defined(BOOTLOADER_HALFKEY)
-                    ":teensy"
-#elif defined(BOOTLOADER_CATERINA)
-                    ":avrdude"
-#elif defined(__AVR_ATmega32A__)
-                    ":flash"
-#endif
-                );
+                SEND_STRING("qmk flash -kb " QMK_KEYBOARD " -km " QMK_KEYMAP);
             }
             return false;
             break;
@@ -156,15 +144,14 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     return true;
 };
 
+#ifdef AUDIO_ENABLE
+
+/*
 void matrix_init_user(void) {
 
-#ifdef AUDIO_ENABLE
     set_tempo(200);
-#endif
-
 }
-
-#ifdef AUDIO_ENABLE
+*/
 
 bool music_mask_user(uint16_t keycode) {
   switch (keycode) {
