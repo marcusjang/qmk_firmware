@@ -33,8 +33,8 @@
 
 enum userspace_layers {
     _BASE = 0,
-    _GAME,
-    _DJMAX,
+    _GAME1,
+    _GAME2,
     _LOWER,
     _RAISE,
     _ADJUST,

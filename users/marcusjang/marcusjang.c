@@ -69,12 +69,11 @@ float jeonguk_song[][2] = SONG(JEONGUK_SONG);
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     static uint16_t caps_haen_timer;
 
-
 #ifdef SSD1306OLED
-  if (record->event.pressed) {
-    set_keylog(keycode, record);
-    // set_timelog();
-  }
+    if (record->event.pressed) {
+        set_keylog(keycode, record);
+        // set_timelog();
+    }
 #endif
 
     switch (keycode) {
@@ -146,20 +145,12 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
 #ifdef AUDIO_ENABLE
 
-/*
-void matrix_init_user(void) {
-
-    set_tempo(200);
-}
-*/
-
 bool music_mask_user(uint16_t keycode) {
-  switch (keycode) {
-    case MUS_OFF:
-      return false;
-    default:
-      return true;
-  }
+    if (keycode == MUS_OFF) {
+        return false;
+    } else {
+        return true;
+    }
 }
 
 void music_on_user(void) {

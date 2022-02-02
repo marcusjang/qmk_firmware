@@ -18,8 +18,8 @@
 #define NAV_SPC LT(_NAV, KC_SPC)
 #define NAV_HAN LT(_NAV, KC_HAEN)
 
-#define L_GAME  TG(_GAME)
-#define L_DJMAX TG(_DJMAX)
+#define L_GAME1 TG(_GAME1)
+#define L_GAME2 TG(_GAME2)
 
 #define CTL_LFT C(KC_LEFT)
 #define CTL_RGT C(KC_RGHT)
