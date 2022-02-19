@@ -9,10 +9,17 @@
 #define MU_MOD XXXXXXX
 #endif
 
+#define TOG_NKR MAGIC_TOGGLE_NKRO
 #ifdef NO_NKRO_SUPPORT
 #undef TOG_NKR
 #define TOG_NKR XXXXXXX
 #endif
+
+
+#ifndef LED_LEVEL
+#define LED_LEVEL XXXXXXX
+#endif
+#define LED_LVL LED_LEVEL
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
@@ -118,7 +125,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * └───┴───┴───┴───┴───┴───┺━━━┹───┴───┴───┴───┴───┘
      */
     [_NAV] = LAYOUT_wrapper( \
-        _______, XXXXXXX, XXXXXXX, KC_UP,   XXXXXXX, XXXXXXX, KC_HOME, KC_PGUP, KC_PGDN, KC_END,  XXXXXXX, _______, \
+        _______, XXXXXXX, XXXXXXX, KC_UP,   XXXXXXX, XXXXXXX, KC_HOME, KC_PGDN, KC_PGUP, KC_END,  XXXXXXX, _______, \
         _______, XXXXXXX, KC_LEFT, KC_DOWN, KC_RGHT, XXXXXXX, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, XXXXXXX, _______, \
         _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, CTL_LFT, CTL_DWN, CTL_UP,  CTL_RGT, XXXXXXX, _______, \
         _______, ___________________BLANK___________________, ___________________BLANK___________________, _______  \

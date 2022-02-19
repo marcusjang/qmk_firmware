@@ -52,13 +52,6 @@
 #define NAV_RIS TD(TD_NAV_RIS)
 #define FN1_FN2 TD(TD_FN1_FN2)
 
-#define TOG_NKR MAGIC_TOGGLE_NKRO
-
-#ifndef LED_LEVEL
-    #define LED_LEVEL XXXXXXX
-#endif
-#define LED_LVL LED_LEVEL
-
 enum userspace_custom_keycodes {
 	CAP_HAN = SAFE_RANGE,
 	HANJA,
