@@ -1,6 +1,5 @@
 #include QMK_KEYBOARD_H
-#include "quantum.h"
-#include "marcus.h"
+#include "marcusjang.h"
 
 #define LAYOUT_wrapper(...) LAYOUT_arrow_command(__VA_ARGS__)
 
@@ -41,7 +40,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
     /* Raised layer
      * ┌───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┐
-     * │ ~ │F11│F12│F13│F14│F15│F16│F17│F18│F19│F20│   │   │
+     * │ ~ │F11│F12│F13│F14│F15│   │   │Psc│Slk│Pau│   │   │
      * ├───┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴───┤
      * │    │ ! │ @ │ # │ $ │ % │ ^ │ & │ * │ ( │ ) │      │
      * ├────┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬─────┤
@@ -67,7 +66,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      *     │Ctl│GUI│Alt│ Lower │SpcRis │NvHn │Fn1│Fn2│
      *     └───┴───┴───┴───────┴───────┴─────┴───┴───┘
      */
-    [_GAME] = LAYOUT_wrapper( \
+    [_GAME1] = LAYOUT_wrapper( \
     KC_ESC,  _________________QWERTY_L1_________________, _________________QWERTY_R1_________________, KC_BSPC, \
     KC_TAB,  _________________QWERTY_L2_________________, _________________QWERTY_R2_________________, KC_ENT,  \
     KC_LSFT, _________________QWERTY_L3_________________, _________________QWERTY_R3_________________, KC_RSFT, \
@@ -85,7 +84,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * └───┴───┴───┴───┴────────┴────────┴────┴───┴────┴───┘
      */
   [_NAV] = LAYOUT_wrapper(
-    _______, XXXXXXX, XXXXXXX, KC_UP,   XXXXXXX, XXXXXXX, KC_HOME, KC_PGUP, KC_PGDN, KC_END,  XXXXXXX, KC_DEL,  \
+    _______, XXXXXXX, XXXXXXX, KC_UP,   XXXXXXX, XXXXXXX, KC_HOME, KC_PGDN, KC_PGUP, KC_END,  XXXXXXX, KC_DEL,  \
     _______, XXXXXXX, KC_LEFT, KC_DOWN, KC_RGHT, XXXXXXX, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, XXXXXXX, _______, \
     _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, CTL_LFT, CTL_DWN, CTL_UP,  CTL_RGT, XXXXXXX, _______, \
     _______, _______, _______, _______,     _______,      _______,       _______,    _______, _______, _______
@@ -136,7 +135,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * └───┴───┴───┴───┴────────┴────────┴────┴───┴────┴───┘
      */
   [_ADJUST] = LAYOUT_wrapper(
-    XXXXXXX, L_GAME,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, AG_SWAP, AG_NORM, XXXXXXX, \
+    XXXXXXX, L_GAME1, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, AG_SWAP, AG_NORM, XXXXXXX, \
     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, CLEAR,   REDO,    MAKE,    XXXXXXX, \
     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_BRID, KC_BRIU, KC_MUTE, KC_VOLD, KC_VOLU, XXXXXXX, RESET,   XXXXXXX, \
     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,     XXXXXXX,      XXXXXXX,       XXXXXXX,    XXXXXXX, XXXXXXX, XXXXXXX
