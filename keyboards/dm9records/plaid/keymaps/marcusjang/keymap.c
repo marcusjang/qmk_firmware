@@ -1,6 +1,6 @@
 #include QMK_KEYBOARD_H
 #include "quantum.h"
-#include "marcus.h"
+#include "marcusjang.h"
 
 #define NO_NKRO_SUPPORT
 #include "keymap_4x12_grid.h"
