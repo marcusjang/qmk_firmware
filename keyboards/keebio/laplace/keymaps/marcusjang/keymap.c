@@ -1,6 +1,6 @@
 #include QMK_KEYBOARD_H
 #include "quantum.h"
-#include "marcus.h"
+#include "marcusjang.h"
 
 #define LAYOUT_wrapper(...) LAYOUT(__VA_ARGS__)
 

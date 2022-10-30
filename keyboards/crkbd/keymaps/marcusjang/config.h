@@ -24,27 +24,37 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 /* Select hand configuration */
 
-// #define MASTER_LEFT
+#define MASTER_LEFT
 // #define MASTER_RIGHT
 // #define EE_HANDS
 
-#define EE_HANDS
-#define SPLIT_USB_DETECT
+//#define TAPPING_FORCE_HOLD
+//#define TAPPING_TERM 100
 
-#undef USE_I2C
-#undef SSD1306OLED
+#ifdef RGBLIGHT_ENABLE
+    #define RGBLIGHT_EFFECT_BREATHING
+    #define RGBLIGHT_EFFECT_RAINBOW_MOOD
+    #define RGBLIGHT_EFFECT_RAINBOW_SWIRL
+    #define RGBLIGHT_EFFECT_SNAKE
+    #define RGBLIGHT_EFFECT_KNIGHT
+    #define RGBLIGHT_EFFECT_CHRISTMAS
+    #define RGBLIGHT_EFFECT_STATIC_GRADIENT
+    #define RGBLIGHT_EFFECT_RGB_TEST
+    #define RGBLIGHT_EFFECT_ALTERNATING
+    #define RGBLIGHT_EFFECT_TWINKLE
+    #define RGBLIGHT_LIMIT_VAL 120
+    #define RGBLIGHT_HUE_STEP 10
+    #define RGBLIGHT_SAT_STEP 17
+    #define RGBLIGHT_VAL_STEP 17
+#endif
 
-#define USE_SERIAL_PD2
-
-#define PERMISSIVE_HOLD
-#undef IGNORE_MOD_TAP_INTERRUPT	
-
-#define OLED_FONT_H "keyboards/crkbd/keymaps/marcus_nus/glcdfont.c"
+// #define OLED_FONT_H "keyboards/crkbd/lib/glcdfont.c"
+#define OLED_FONT_H "keyboards/crkbd/keymaps/marcusjang/glcdfont.c"
 
 #define TAPPING_TERM    200
 #define TAPPING_TOGGLE  2
 
-#define QMK_KEYS_PER_SCAN 12
+// #define QMK_KEYS_PER_SCAN 12
 
 #define MOUSEKEY_DELAY              50
 #define MOUSEKEY_INTERVAL           15
@@ -52,3 +62,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define MOUSEKEY_TIME_TO_MAX        50
 #define MOUSEKEY_WHEEL_MAX_SPEED    1
 #define MOUSEKEY_WHEEL_TIME_TO_MAX  50
+
+#undef LOCKING_SUPPORT_ENABLE
+#undef LOCKING_RESYNC_ENABLE
+

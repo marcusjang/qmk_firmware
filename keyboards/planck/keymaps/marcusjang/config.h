@@ -3,3 +3,6 @@
 #define PLANCK_EZ_LED_LOWER 3
 #define PLANCK_EZ_LED_RAISE 4
 #define PLANCK_EZ_LED_ADJUST 5
+
+#undef DEBOUNCE
+#define DEBOUNCE 7
