@@ -5,4 +5,4 @@
 #define PLANCK_EZ_LED_ADJUST 5
 
 #undef DEBOUNCE
-#define DEBOUNCE 7
+#define DEBOUNCE 5
