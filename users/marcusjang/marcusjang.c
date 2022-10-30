@@ -60,7 +60,7 @@ qk_tap_dance_action_t tap_dance_actions[] = {
     [TD_FN1_FN2] = ACTION_TAP_DANCE_DOUBLE_LAYERS(_FN1, _FN2)
 };
 
-uint32_t layer_state_set_user(uint32_t state) {
+layer_state_t layer_state_set_user(layer_state_t state) {
     return update_tri_layer_state(state, _LOWER, _RAISE, _ADJUST);
 }
 
