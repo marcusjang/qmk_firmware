@@ -48,21 +48,4 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     #define RGBLIGHT_VAL_STEP 17
 #endif
 
-// #define OLED_FONT_H "keyboards/crkbd/lib/glcdfont.c"
-#define OLED_FONT_H "keyboards/crkbd/keymaps/marcusjang/glcdfont.c"
-
-#define TAPPING_TERM    200
-#define TAPPING_TOGGLE  2
-
-// #define QMK_KEYS_PER_SCAN 12
-
-#define MOUSEKEY_DELAY              50
-#define MOUSEKEY_INTERVAL           15
-#define MOUSEKEY_MAX_SPEED          4
-#define MOUSEKEY_TIME_TO_MAX        50
-#define MOUSEKEY_WHEEL_MAX_SPEED    1
-#define MOUSEKEY_WHEEL_TIME_TO_MAX  50
-
-#undef LOCKING_SUPPORT_ENABLE
-#undef LOCKING_RESYNC_ENABLE
-
+#define OLED_FONT_H "keyboards/crkbd/lib/glcdfont.c"

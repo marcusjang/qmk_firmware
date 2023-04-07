@@ -1,22 +1,22 @@
 #define LOWER   MO(_LOWER)
 #define LWR_SPC LT(_LOWER, KC_SPC)
 #define LWR_BSP LT(_LOWER, KC_BSPC)
-#define LWR_HAN LT(_LOWER, KC_HAEN)
+#define LWR_HAN LT(_LOWER, KC_LNG1)
 
 #define RAISE   MO(_RAISE)
 #define RIS_SPC LT(_RAISE, KC_SPC)
-#define RIS_HAN LT(_RAISE, KC_HAEN)
+#define RIS_HAN LT(_RAISE, KC_LNG1)
 
 #define FN1     MO(_FN1)
 #define FN2     MO(_FN2)
-#define FN2_HAN LT(_FN2, KC_HAEN)
+#define FN2_HAN LT(_FN2, KC_LNG1)
 
 #define SFT_ESC MT(MOD_LSFT, KC_ESC)
 #define SFT_BSP MT(MOD_LSFT, KC_BSPC)
 #define SFT_ENT MT(MOD_RSFT, KC_ENTER)
 
 #define NAV_SPC LT(_NAV, KC_SPC)
-#define NAV_HAN LT(_NAV, KC_HAEN)
+#define NAV_HAN LT(_NAV, KC_LNG1)
 
 #define L_GAME1 TG(_GAME1)
 #define L_GAME2 TG(_GAME2)
@@ -26,6 +26,7 @@
 #define CTL_UP  C(KC_UP)
 #define CTL_DWN C(KC_DOWN)
 #define CTL_ESC MT(MOD_LCTL, KC_ESC)
+#define CTRLESC C(KC_ESC)
 
 #define COPY    C(KC_C)
 #define CUT     C(KC_X)

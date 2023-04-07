@@ -89,10 +89,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * └───┴───┴───┴───┴───┴───┴───┴───┴───┴───┴───┴───┘
      */
     [_GAME1] = LAYOUT_wrapper( \
-        KC_ESC,  _________________QWERTY_L1_________________, _________________QWERTY_R1_________________, KC_BSPC, \
-        KC_LSFT, _________________QWERTY_L2_________________, _________________QWERTY_R2_________________, KC_RSFT, \
-        KC_TAB,  _________________QWERTY_L3_________________, _________________QWERTY_R3_________________, KC_ENT,  \
-        KC_LCTL, KC_CAPS, KC_LGUI, KC_LALT, LOWER,   KC_SPC,  NAV_SPC, RAISE,    KC_RALT, KC_RGUI, KC_APP, KC_RCTL  \
+        KC_TILD, KC_1,    _________________QWERTY_L1_________________, _________________QWERTY_R1_________________, \
+        KC_TAB,  KC_2,    _________________QWERTY_L2_________________, _________________QWERTY_R2_________________, \
+        KC_LSFT, KC_3,    _________________QWERTY_L3_________________, _________________QWERTY_R3_________________, \
+        KC_LCTL, KC_ESC,  KC_CAPS, KC_LALT, LOWER,   KC_SPC,  NAV_SPC, RAISE,   KC_F1,   KC_F2,   KC_F3,   L_GAME1  \
     ),
 
     /* Gaming layer 2
@@ -145,8 +145,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_FN1] = LAYOUT_wrapper( \
         _______, CLS_APP, CLS_TAB, XXXXXXX, REFRESH, RSTR_TB, XXXXXXX, KC_KP_7, KC_KP_8, KC_KP_9, KC_PSCR, _______, \
         _______, PRV_TAB, NXT_TAB, PRV_APP, NXT_APP, REDO,    UNDO,    KC_KP_4, KC_KP_5, KC_KP_6, XXXXXXX, _______, \
-        _______, KC_APP,  HANJA,   KC_HAEN, KC_CAPS, XXXXXXX, XXXXXXX, KC_KP_1, KC_KP_2, KC_KP_3, CLEAR,   _______, \
-        _______, _______, _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_KP_0, KC_NLCK, _______, _______  \
+        _______, KC_APP,  HANJA,   KC_LNG1, KC_CAPS, XXXXXXX, XXXXXXX, KC_KP_1, KC_KP_2, KC_KP_3, CLEAR,   _______, \
+        _______, _______, _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_KP_0, KC_NUM,  _______, _______  \
     ),
 
     /* Second Function layer
@@ -179,10 +179,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * └───┴───┴───┴───┺━━━┹───┴───┺━━━┹───┴───┴───┴───┘
      */
     [_ADJUST] = LAYOUT_wrapper( \
-        XXXXXXX, L_GAME1, L_GAME2, RGB_HUI, RGB_SAI, RGB_VAI, RGB_SPI, RGB_SPD, LED_LVL, AG_SWAP, XXXXXXX, JEONGUK, \
-        XXXXXXX, RGB_TOG, RGB_MOD, RGB_HUD, RGB_SAD, RGB_VAD, KC_MPRV, KC_MPLY, KC_MNXT, AG_NORM, MAKE,    XXXXXXX, \
-        XXXXXXX, AU_TOG,  MU_TOG,  MU_MOD,  KC_BRID, KC_BRIU, KC_MUTE, KC_VOLD, KC_VOLU, TOG_NKR, RESET,   XXXXXXX, \
-        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, LOWER,   XXXXXXX, XXXXXXX, RAISE,   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX  \
+        XXXXXXX, L_GAME1, RGB_TOG, RGB_HUI, RGB_SAI, RGB_VAI, RGB_SPI, RGB_SPD, LED_LVL, KC_WAKE, KC_SLEP, XXXXXXX, \
+        XXXXXXX, L_GAME2, RGB_MOD, RGB_HUD, RGB_SAD, RGB_VAD, KC_MPRV, KC_MPLY, KC_MNXT, AG_TOGG, MAKE,    XXXXXXX, \
+        XXXXXXX, AU_TOG,  MU_TOG,  MU_MOD,  KC_BRID, KC_BRIU, KC_MUTE, KC_VOLD, KC_VOLU, TOG_NKR, QK_BOOT, XXXXXXX, \
+        XXXXXXX, GUI_TOG, XXXXXXX, XXXXXXX, LOWER,   XXXXXXX, XXXXXXX, RAISE,   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX  \
     ),
 
 #ifdef AUDIO_ENABLE

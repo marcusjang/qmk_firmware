@@ -64,7 +64,7 @@ layer_state_t layer_state_set_user(layer_state_t state) {
     return update_tri_layer_state(state, _LOWER, _RAISE, _ADJUST);
 }
 
-float jeonguk_song[][2] = SONG(JEONGUK_SONG);
+//float jeonguk_song[][2] = SONG(JEONGUK_SONG);
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     static uint16_t caps_haen_timer;
@@ -83,8 +83,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 caps_haen_timer = timer_read();
             } else {
                 if (timer_elapsed(caps_haen_timer) < TAPPING_TERM) {
-                    register_code(KC_HAEN);
-                    unregister_code(KC_HAEN);
+                    register_code(KC_LNG1);
+                    unregister_code(KC_LNG1);
                 } else {
                     register_code(KC_CAPS);
                     unregister_code(KC_CAPS);
@@ -95,7 +95,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
         case HANJA:
             if (record->event.pressed) {
-                SEND_STRING(SS_TAP(X_LANG2) SS_TAP(X_TAB));
+                SEND_STRING(SS_TAP(X_LNG2) SS_TAP(X_TAB));
             }
             return false;
             break;
@@ -109,7 +109,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
         case CLEAR:
             if (record->event.pressed) {
-                SEND_STRING(SS_LCTRL("a") SS_TAP(X_DELETE));
+                SEND_STRING(SS_LCTL("a") SS_TAP(X_DELETE));
             }
             return false;
             break;
@@ -124,6 +124,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             return false;
             break;
 
+        /*
         case JEONGUK:
             #ifdef AUDIO_ENABLE
                 if (record->event.pressed) {
@@ -132,10 +133,11 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             #endif
             return false;
             break;
+        */
 
         case HAN_MOM:
-            register_code(KC_HAEN);
-            unregister_code(KC_HAEN);
+            register_code(KC_LNG1);
+            unregister_code(KC_LNG1);
             return false;
             break;
     }
