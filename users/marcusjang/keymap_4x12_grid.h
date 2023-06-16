@@ -37,7 +37,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_BASE] = LAYOUT_wrapper( \
         KC_TAB,  _________________QWERTY_L1_________________, _________________QWERTY_R1_________________, KC_BSPC, \
         SFT_ESC, _________________QWERTY_L2_________________, _________________QWERTY_R2_________________, SFT_ENT, \
-        KC_LSPO, _________________QWERTY_L3_________________, _________________QWERTY_R3_________________, KC_RSPC, \
+        SC_LSPO, _________________QWERTY_L3_________________, _________________QWERTY_R3_________________, SC_RSPC, \
         KC_LCTL, KC_LGUI, KC_LALT, FN1,     LOWER,   NAV_SPC, NAV_SPC, RAISE,   FN2_HAN, KC_RALT, KC_RCTL, HAN_MOM  \
     ),
 
@@ -181,7 +181,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_ADJUST] = LAYOUT_wrapper( \
         XXXXXXX, L_GAME1, RGB_TOG, RGB_HUI, RGB_SAI, RGB_VAI, RGB_SPI, RGB_SPD, LED_LVL, KC_WAKE, KC_SLEP, XXXXXXX, \
         XXXXXXX, L_GAME2, RGB_MOD, RGB_HUD, RGB_SAD, RGB_VAD, KC_MPRV, KC_MPLY, KC_MNXT, AG_TOGG, MAKE,    XXXXXXX, \
-        XXXXXXX, AU_TOG,  MU_TOG,  MU_MOD,  KC_BRID, KC_BRIU, KC_MUTE, KC_VOLD, KC_VOLU, TOG_NKR, QK_BOOT, XXXXXXX, \
+        XXXXXXX, AU_TOGG, MU_TOGG, MU_NEXT, KC_BRID, KC_BRIU, KC_MUTE, KC_VOLD, KC_VOLU, TOG_NKR, QK_BOOT, XXXXXXX, \
         XXXXXXX, GUI_TOG, XXXXXXX, XXXXXXX, LOWER,   XXXXXXX, XXXXXXX, RAISE,   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX  \
     ),
 
@@ -190,7 +190,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         XXXXXXX, ___________________NOOP____________________, ___________________NOOP____________________, XXXXXXX,  \
         XXXXXXX, ___________________NOOP____________________, ___________________NOOP____________________, XXXXXXX, \
         XXXXXXX, ___________________NOOP____________________, ___________________NOOP____________________, XXXXXXX, \
-        MUS_OFF, MU_MOD,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, ___________________NOOP____________________, XXXXXXX  \
+        MUS_OFF, MU_NEXT, AU_NEXT, XXXXXXX, XXXXXXX, XXXXXXX, ___________________NOOP____________________, XXXXXXX  \
     )
 #endif
     

@@ -15,6 +15,7 @@
 #define SFT_BSP MT(MOD_LSFT, KC_BSPC)
 #define SFT_ENT MT(MOD_RSFT, KC_ENTER)
 
+#define NAV     MO(_NAV)
 #define NAV_SPC LT(_NAV, KC_SPC)
 #define NAV_HAN LT(_NAV, KC_LNG1)
 

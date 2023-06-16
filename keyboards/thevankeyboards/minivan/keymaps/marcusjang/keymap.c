@@ -18,8 +18,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_BASE] = LAYOUT_wrapper(
     KC_TAB,  _________________QWERTY_L1_________________, _________________QWERTY_R1_________________, KC_BSPC, \
     CTL_ESC, _________________QWERTY_L2_________________, _________________QWERTY_R2_________________, SFT_ENT, \
-    KC_LSPO, _________________QWERTY_L3_________________, _________________QWERTY_R3_________________, KC_RSPC, \
-    XXXXXXX, FN2,      KC_LALT, KC_LGUI,    LWR_SPC,      NAV_SPC,       RIS_HAN,    FN1,     HAN_MOM, XXXXXXX
+    SC_LSPO, _________________QWERTY_L3_________________, _________________QWERTY_R3_________________, SC_RSPC, \
+    XXXXXXX, NAV,      KC_LALT, KC_LGUI,    LOWER,        KC_SPC,        RAISE,      KC_RALT, FN2,     XXXXXXX
   ),
     /* Lower layer
      * ┌───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬─────┐
@@ -36,7 +36,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_GRV,  _________________FUNC_LEFT_________________, _________________FUNC_RIGHT________________, _______, \
     _______, ________________NUMBER_LEFT________________, ________________NUMBER_RIGHT_______________, _______, \
     _______, _________________SYMB_LEFT_________________, _________________SYMB_RIGHT________________, _______, \
-    _______, _______, _______, _______,     _______,      RAISE,         _______,    _______, _______, _______
+    _______, _______, _______, _______,     _______,      _______,       RAISE,      _______, _______, _______
   ),
     /* Raised layer
      * ┌───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬─────┐
@@ -70,7 +70,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     CTRLESC, XXXXXXX, XXXXXXX, KC_UP,   XXXXXXX, XXXXXXX, KC_HOME, KC_PGDN, KC_PGUP, KC_END,  XXXXXXX, KC_DEL,  \
     KC_LCTL, XXXXXXX, KC_LEFT, KC_DOWN, KC_RGHT, XXXXXXX, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, XXXXXXX, _______, \
     _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, CTL_LFT, CTL_DWN, CTL_UP,  CTL_RGT, XXXXXXX, _______, \
-    _______, _______, _______, _______,     _______,      _______,       _______,    _______, _______, _______
+    _______, _______, _______, _______,     _______,      _______,       KC_RALT,    KC_RGUI, KC_RCTL, _______
   ),
     /* Function layer
      * ┌───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┐
@@ -101,8 +101,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * └───┴───┴───┴───┴────────┴────────┴────┴───┴────┴───┘
      */
   [_FN2] = LAYOUT_wrapper(
-    _______, KC_WH_D, KC_BTN2, KC_MS_U, KC_BTN1, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, CLS_APP, CLS_TAB, KC_DEL,  \
-    _______, KC_WH_U, KC_MS_L, KC_MS_D, KC_MS_R, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, PRV_TAB, NXT_TAB, _______, \
+    _______, KC_WH_D, KC_BTN2, KC_MS_U, KC_BTN1, CLS_APP, CLS_TAB, RSTR_TB, XXXXXXX, XXXXXXX, KC_PSCR, KC_DEL,  \
+    KC_CAPS, KC_WH_U, KC_MS_L, KC_MS_D, KC_MS_R, PRV_TAB, NXT_TAB, XXXXXXX, KC_MPRV, KC_MPLY, KC_MNXT, _______, \
     _______, KC_BTN5, KC_WH_L, KC_WH_R, KC_BTN3, XXXXXXX, XXXXXXX, XXXXXXX, CUT,     COPY,    PASTE,   _______, \
     _______, _______, _______, _______,     KC_BTN4,      _______,       _______,    _______, _______, _______
   ),

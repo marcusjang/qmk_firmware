@@ -4,11 +4,11 @@ void set_keylog(uint16_t keycode, keyrecord_t *record);
 
 #define ACTION_TAP_DANCE_DOUBLE_MODS(mod1, mod2) { \
     .fn = { td_double_mods_each, NULL, td_double_mods_reset }, \
-    .user_data = &(qk_tap_dance_pair_t){ mod1, mod2 }, \
+    .user_data = &(tap_dance_pair_t){ mod1, mod2 }, \
 }
 
-void td_double_mods_each(qk_tap_dance_state_t *state, void *user_data) {
-    qk_tap_dance_pair_t *mods = (qk_tap_dance_pair_t *)user_data;
+void td_double_mods_each(tap_dance_state_t *state, void *user_data) {
+    tap_dance_pair_t *mods = (tap_dance_pair_t *)user_data;
     // Single tap → mod1, double tap → mod2, triple tap etc. → mod1+mod2
     if (state->count == 1 || state->count == 3) {
         register_code(mods->kc1);
@@ -20,8 +20,8 @@ void td_double_mods_each(qk_tap_dance_state_t *state, void *user_data) {
     state->weak_mods &= ~(MOD_BIT(mods->kc1) | MOD_BIT(mods->kc2));
 }
 
-void td_double_mods_reset(qk_tap_dance_state_t *state, void *user_data) {
-    qk_tap_dance_pair_t *mods = (qk_tap_dance_pair_t *)user_data;
+void td_double_mods_reset(tap_dance_state_t *state, void *user_data) {
+    tap_dance_pair_t *mods = (tap_dance_pair_t *)user_data;
     if (state->count == 1 || state->count > 2) {
         unregister_code(mods->kc1);
     }
@@ -32,11 +32,11 @@ void td_double_mods_reset(qk_tap_dance_state_t *state, void *user_data) {
 
 #define ACTION_TAP_DANCE_DOUBLE_LAYERS(layer1, layer2) { \
     .fn = { NULL, td_double_layers_finished, td_double_layers_reset }, \
-    .user_data = &(qk_tap_dance_pair_t){ layer1, layer2 }, \
+    .user_data = &(tap_dance_pair_t){ layer1, layer2 }, \
 }
 
-void td_double_layers_finished(qk_tap_dance_state_t *state, void *user_data) {
-    qk_tap_dance_pair_t *layers = (qk_tap_dance_pair_t *)user_data;
+void td_double_layers_finished(tap_dance_state_t *state, void *user_data) {
+    tap_dance_pair_t *layers = (tap_dance_pair_t *)user_data;
     if (state->count == 1 || state->count == 3) {
         layer_on(layers->kc1);
     } else if (state->count == 2) {
@@ -44,8 +44,8 @@ void td_double_layers_finished(qk_tap_dance_state_t *state, void *user_data) {
     }
 }
 
-void td_double_layers_reset(qk_tap_dance_state_t *state, void *user_data) {
-    qk_tap_dance_pair_t *layers = (qk_tap_dance_pair_t *)user_data;
+void td_double_layers_reset(tap_dance_state_t *state, void *user_data) {
+    tap_dance_pair_t *layers = (tap_dance_pair_t *)user_data;
     if (state->count == 1 || state->count > 2) {
         layer_off(layers->kc1);
     }
@@ -54,7 +54,7 @@ void td_double_layers_reset(qk_tap_dance_state_t *state, void *user_data) {
     }
 }
 
-qk_tap_dance_action_t tap_dance_actions[] = {
+tap_dance_action_t tap_dance_actions[] = {
     [TD_RSF_RCT] = ACTION_TAP_DANCE_DOUBLE_MODS(KC_RSFT, KC_RCTL),
     [TD_NAV_RIS] = ACTION_TAP_DANCE_DOUBLE_LAYERS(_RAISE, _NAV),
     [TD_FN1_FN2] = ACTION_TAP_DANCE_DOUBLE_LAYERS(_FN1, _FN2)
