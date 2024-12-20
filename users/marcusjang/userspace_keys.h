@@ -67,5 +67,8 @@ enum userspace_custom_keycodes {
 enum userspace_tap_dance {
 	TD_RSF_RCT,
     TD_NAV_RIS,
-    TD_FN1_FN2
+    TD_FN1_FN2,
+    TAP_DANCE_ACTIONS_COUNT
 };
+
+extern tap_dance_action_t tap_dance_actions[TAP_DANCE_ACTIONS_COUNT];

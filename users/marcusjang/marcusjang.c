@@ -54,7 +54,7 @@ void td_double_layers_reset(tap_dance_state_t *state, void *user_data) {
     }
 }
 
-tap_dance_action_t tap_dance_actions[] = {
+tap_dance_action_t tap_dance_actions[TAP_DANCE_ACTIONS_COUNT] = {
     [TD_RSF_RCT] = ACTION_TAP_DANCE_DOUBLE_MODS(KC_RSFT, KC_RCTL),
     [TD_NAV_RIS] = ACTION_TAP_DANCE_DOUBLE_LAYERS(_RAISE, _NAV),
     [TD_FN1_FN2] = ACTION_TAP_DANCE_DOUBLE_LAYERS(_FN1, _FN2)

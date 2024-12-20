@@ -1,5 +1,4 @@
-#include "quantum.h"
-//#include "songs_list.h"
+#include QMK_KEYBOARD_H
 #include "userspace_keys.h"
 
 #define ___________________BLANK___________________        _______, _______, _______, _______, _______
