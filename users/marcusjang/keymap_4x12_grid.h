@@ -89,10 +89,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * └───┴───┴───┴───┴───┴───┴───┴───┴───┴───┴───┴───┘
      */
     [_GAME1] = LAYOUT_wrapper( \
-        KC_TILD, KC_1,    _________________QWERTY_L1_________________, _________________QWERTY_R1_________________, \
-        KC_TAB,  KC_2,    _________________QWERTY_L2_________________, _________________QWERTY_R2_________________, \
-        KC_LSFT, KC_3,    _________________QWERTY_L3_________________, _________________QWERTY_R3_________________, \
-        KC_LCTL, KC_ESC,  KC_CAPS, KC_LALT, LOWER,   KC_SPC,  NAV_SPC, RAISE,   KC_F1,   KC_F2,   KC_F3,   L_GAME1  \
+        KC_ESC,  ________________NUMBER_LEFT________________, ________________NUMBER_RIGHT_______________, KC_BSPC, \
+        KC_TAB,  _________________QWERTY_L1_________________, _________________QWERTY_R1_________________, KC_ENT,  \
+        KC_LSFT, _________________QWERTY_L2_________________, _________________QWERTY_R2_________________, KC_RSFT, \
+        KC_LCTL, KC_Z,    KC_X,    KC_C,    KC_V,     KC_SPC, KC_SPC,  KC_LEFT, KC_DOWN, KC_UP,  KC_RIGHT, L_GAME1  \
     ),
 
     /* Gaming layer 2
