@@ -1,4 +1,3 @@
-
-RGBLIGHT_ENABLE = no
-
-#SRC += backlight_marcus.c
+USER_NAME := none
+VIA_ENABLE = yes
+LTO_ENABLE = yes
