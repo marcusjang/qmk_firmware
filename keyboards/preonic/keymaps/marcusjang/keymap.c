@@ -1,6 +1,7 @@
 #include QMK_KEYBOARD_H
 #include "marcusjang.h"
 
+#define TOG_NKR QK_MAGIC_TOGGLE_NKRO
 #define LAYOUT_wrapper(...) LAYOUT_preonic_grid(__VA_ARGS__)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -22,8 +23,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_ESC,  ________________NUMBER_LEFT________________, ________________NUMBER_RIGHT_______________, KC_DEL,  \
         KC_TAB,  _________________QWERTY_L1_________________, _________________QWERTY_R1_________________, KC_BSPC, \
         SFT_ESC, _________________QWERTY_L2_________________, _________________QWERTY_R2_________________, SFT_ENT, \
-        KC_LSPO, _________________QWERTY_L3_________________, _________________QWERTY_R3_________________, KC_RSPC, \
-        KC_LCTL, KC_LGUI, KC_LALT, FN1,     LOWER,   SFT_BSP, NAV_SPC, RAISE,   FN2_HAN, KC_RALT, KC_RCTL, HAN_MOM  \
+        SC_LSPO, _________________QWERTY_L3_________________, _________________QWERTY_R3_________________, SC_RSPC, \
+        KC_LCTL, KC_LGUI, KC_LALT, FN1,     LOWER,   NAV_SPC, NAV_SPC, RAISE,   FN2_HAN, KC_RALT, KC_RCTL, HAN_MOM  \
     ),
     /* Lower layer
      * ┌───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┐
@@ -106,8 +107,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______, ___________________BLANK___________________, ___________________BLANK___________________, _______, \
         _______, CLS_APP, CLS_TAB, XXXXXXX, REFRESH, RSTR_TB, XXXXXXX, KC_KP_7, KC_KP_8, KC_KP_9, KC_PSCR, _______, \
         _______, PRV_TAB, NXT_TAB, PRV_APP, NXT_APP, REDO,    UNDO,    KC_KP_4, KC_KP_5, KC_KP_6, XXXXXXX, _______, \
-        _______, KC_APP,  HANJA,   KC_HAEN, KC_CAPS, XXXXXXX, XXXXXXX, KC_KP_1, KC_KP_2, KC_KP_3, CLEAR,   _______, \
-        _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_KP_0, KC_NLCK, XXXXXXX, _______  \
+        _______, KC_APP,  HANJA,   KC_LNG1, KC_CAPS, XXXXXXX, XXXXXXX, KC_KP_1, KC_KP_2, KC_KP_3, CLEAR,   _______, \
+        _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_KP_0, KC_NUM,  XXXXXXX, _______  \
     ),
     /* Second Function layer
      * ┌───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┐
@@ -130,6 +131,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______, KC_BTN5, KC_WH_L, KC_WH_R, KC_BTN3, XXXXXXX, XXXXXXX, XXXXXXX, CUT,     COPY,    PASTE,   _______, \
         _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_BTN4, ___________________NOOP____________________, _______  \
     ),
+    [_GAME1] = LAYOUT_wrapper( \
+        KC_ESC,  ________________NUMBER_LEFT________________, ________________NUMBER_RIGHT_______________, L_GAME1, \
+        KC_TAB,  _________________QWERTY_L1_________________, _________________QWERTY_R1_________________, KC_BSPC, \
+        KC_CAPS, _________________QWERTY_L2_________________, _________________QWERTY_R2_________________, KC_ENT,  \
+        KC_LSFT, _________________QWERTY_L3_________________, _________________QWERTY_R3_________________, KC_RSFT, \
+        KC_LCTL, XXXXXXX, XXXXXXX, KC_LALT, KC_SPC,  KC_SPC,  KC_SPC,  KC_LEFT, KC_DOWN, KC_UP,  KC_RIGHT, L_GAME1  \
+    ),
     /* Adjust layer
      * ┌───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┐
      * │   │   │   │   │   │   │   │   │   │   │   │   │
@@ -145,17 +153,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * └───┴───┴───┴───┺━━━┹───┴───┺━━━┹───┴───┴───┴───┘
      */
     [_ADJUST] = LAYOUT_wrapper( \
-        XXXXXXX, ___________________NOOP____________________, ___________________NOOP____________________, JEONGUK, \
-        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, AG_SWAP, XXXXXXX, XXXXXXX, \
-        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_MPRV, KC_MPLY, KC_MNXT, AG_NORM, MAKE,    XXXXXXX, \
-        XXXXXXX, AU_TOG,  MU_TOG,  MU_MOD,  KC_BRID, KC_BRIU, KC_MUTE, KC_VOLD, KC_VOLU, TOG_NKR, RESET,   XXXXXXX, \
+        XXXXXXX, ___________________NOOP____________________, ___________________NOOP____________________, XXXXXXX, \
+        XXXXXXX, L_GAME1, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_WAKE, KC_SLEP, XXXXXXX, \
+        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_MPRV, KC_MPLY, KC_MNXT, AG_TOGG, MAKE,    XXXXXXX, \
+        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_BRID, KC_BRIU, KC_MUTE, KC_VOLD, KC_VOLU, TOG_NKR, QK_BOOT, XXXXXXX, \
         XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, LOWER,   XXXXXXX, XXXXXXX, RAISE,   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX  \
-    ),
-    [_MUSIC] = LAYOUT_wrapper( \
-        XXXXXXX, ___________________NOOP____________________, ___________________NOOP____________________, XXXXXXX, \
-        XXXXXXX, ___________________NOOP____________________, ___________________NOOP____________________, XXXXXXX,  \
-        XXXXXXX, ___________________NOOP____________________, ___________________NOOP____________________, XXXXXXX, \
-        XXXXXXX, ___________________NOOP____________________, ___________________NOOP____________________, XXXXXXX, \
-        MUS_OFF, MU_MOD,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, ___________________NOOP____________________, XXXXXXX  \
     )
 };
